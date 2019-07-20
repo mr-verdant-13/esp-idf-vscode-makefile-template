@@ -67,6 +67,14 @@
                 "command": "make clean",
             },
         },
+        {
+            "label": "Create new component",
+            "type": "shell",
+            "problemMatcher": [],
+            "windows": {
+                "command": "export componentName=${input:componentName} && sh scripts/CreateNewComponent.sh",
+            },
+        },
     ],
     "inputs": [
         {
@@ -83,6 +91,11 @@
             "id": "serialPort",
             "type": "promptString",
             "description": "Serial port name to be used"
+        },
+        {
+            "id": "componentName",
+            "type": "promptString",
+            "description": "New component name"
         },
     ]
 }

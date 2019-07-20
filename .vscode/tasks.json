@@ -19,5 +19,13 @@
                 "command": "sh scripts/Menuconfig.sh",
             },
         },
+        {
+            "label": "Defconfig",
+            "type": "shell",
+            "problemMatcher": [],
+            "windows": {
+                "command": "make defconfig",
+            },
+        },
     ]
 }

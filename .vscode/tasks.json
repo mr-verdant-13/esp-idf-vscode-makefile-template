@@ -75,6 +75,14 @@
                 "command": "export componentName=${input:componentName} && sh scripts/CreateNewComponent.sh",
             },
         },
+        {
+            "label": "Remove auto-generated files",
+            "type": "shell",
+            "problemMatcher": [],
+            "windows": {
+                "command": "sh scripts/RemoveAutogen.sh",
+            },
+        },
     ],
     "inputs": [
         {

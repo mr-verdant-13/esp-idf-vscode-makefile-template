@@ -59,6 +59,14 @@
                 "command": "make flash monitor ESPPORT=${input:serialPort}",
             },
         },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "problemMatcher": [],
+            "windows": {
+                "command": "make clean",
+            },
+        },
     ],
     "inputs": [
         {

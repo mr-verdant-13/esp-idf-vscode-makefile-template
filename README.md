@@ -1,6 +1,6 @@
 # **ESP-IDF project template for VSCode (Makefile)**
 
-[Versión en español](https://github.com/mr-verdant-13/esp-idf-vscode-makefile-template/blob/release/v1.0.0/README.md)
+[Versión en español](https://github.com/mr-verdant-13/esp-idf-vscode-makefile-template/blob/release/v1.0.0/LEAME.md)
 
 ## **Windows**
 

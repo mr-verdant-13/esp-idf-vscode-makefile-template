@@ -35,6 +35,14 @@
                 "command": "export testNumber=\"${input:testNumber}\" && export coresNumber=\"${input:coresNumber}\" && sh scripts/BuildTest.sh",
             },
         },
+        {
+            "label": "Flash",
+            "type": "shell",
+            "problemMatcher": [],
+            "windows": {
+                "command": "make flash ESPPORT=${input:serialPort}",
+            },
+        },
     ],
     "inputs": [
         {
@@ -46,6 +54,11 @@
             "id": "coresNumber",
             "type": "promptString",
             "description": "Number of cores to be used"
+        },
+        {
+            "id": "serialPort",
+            "type": "promptString",
+            "description": "Serial port name to be used"
         },
     ]
 }

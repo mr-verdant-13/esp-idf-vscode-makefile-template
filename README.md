@@ -1,6 +1,6 @@
 # **ESP-IDF project template for VSCode (Makefile)**
 
-[Versión en español](https://github.com/mr-verdant-13/esp-idf-vscode-makefile-template/blob/release/v1.0.0/LEAME.md)
+[Versión en español](https://github.com/mr-verdant-13/esp-idf-vscode-makefile-template/blob/v1.0.0/LEAME.md)
 
 ## **Windows**
 
@@ -54,7 +54,7 @@
 
 ### **Considerations**
 
-- To use this template, the ESP-IDF must be installed as described in [this tutorial](https://github.com/mr-verdant-13/esp-idf-instructions).
+- To use this template, the ESP-IDF must be installed as described in [this tutorial](https://github.com/mr-verdant-13/esp-idf-instructions/blob/master/README.md).
 
 ## **Simple example (test0000)**
 

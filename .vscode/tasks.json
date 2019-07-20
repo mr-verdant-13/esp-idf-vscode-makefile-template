@@ -27,5 +27,25 @@
                 "command": "make defconfig",
             },
         },
+        {
+            "label": "Build test",
+            "type": "shell",
+            "problemMatcher": [],
+            "windows": {
+                "command": "export testNumber=\"${input:testNumber}\" && export coresNumber=\"${input:coresNumber}\" && sh scripts/BuildTest.sh",
+            },
+        },
+    ],
+    "inputs": [
+        {
+            "id": "testNumber",
+            "type": "promptString",
+            "description": "Test number to be used"
+        },
+        {
+            "id": "coresNumber",
+            "type": "promptString",
+            "description": "Number of cores to be used"
+        },
     ]
 }

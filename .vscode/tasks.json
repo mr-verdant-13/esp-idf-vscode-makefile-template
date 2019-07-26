@@ -28,12 +28,34 @@
             },
         },
         {
+            "label": "Generate test list",
+            "presentation": {
+                "reveal": "never",
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "isBackground": true,
+            "type": "shell",
+            "windows": {
+                "command": "sh scripts/GenerateTestList.sh"
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
             "label": "Build test",
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "export testNumber=\"${input:testNumber}\" && export coresNumber=\"${input:coresNumber}\" && sh scripts/BuildTest.sh",
+                "command": "export testFile=\"${input:testFile}\" && export coresNumber=\"${input:coresNumber}\" && sh scripts/BuildTest.sh",
             },
+            "dependsOn":[
+                "Generate test list",
+            ],
+            "dependsOrder": "sequence"
         },
         {
             "label": "Flash",
@@ -86,9 +108,12 @@
     ],
     "inputs": [
         {
-            "id": "testNumber",
-            "type": "promptString",
-            "description": "Test number to be used"
+            "type": "pickString",
+            "description": "Test number to be used",
+            "id": "testFile",
+			"options": [
+				"test0000.cpp"
+            ]
         },
         {
             "id": "coresNumber",

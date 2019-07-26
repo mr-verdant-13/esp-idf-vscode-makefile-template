@@ -17,7 +17,7 @@
         The `make defconfig` command is executed.
 
     - `Build test` task:\
-        1.- The user is prompted to introduce the test number to be compiled.\
+        1.- The user is prompted to choose the test to be compiled.\
         2.- The user is prompted to introduce the quantity of cores to be used for the compillation of the selected test application.\
         3.- The `make all` command is executed considering the specified number of cores (`-j` option).
     
@@ -44,6 +44,9 @@
     - `Remove auto-generated files` task:\
         All auto-generated files (`sdkconfig`, `sdkconfig.old`, `main/main.cpp`) and directories (`build`) are removed.
 
+    - `Generate test list` task:\
+        All C/C++ files inside the `test` directory are added as input options for the `Build test` to use.
+
 - Specifies the include directories that might be used by the IntelliSense engine.
 
 - Facilitates the testing process by using the `Build test` task.
@@ -61,7 +64,7 @@
 1. Execute the `Defconfig` task.
 
 2. In this example, the `test0000.cpp` source code will be used.\
-   Execute the `Build test` task and introduce the number `0` as the number test to be used and the number of cores you would like to use for building.
+   Execute the `Build test` task, choose the `test0000.cpp` to be compiled and the number of cores you would like to use for building.
 
 3. Once the test has been built, execute the `Flash & Monitor` task and introduce the serial port name to be used for flashing and monitoring.
 

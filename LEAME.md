@@ -17,7 +17,7 @@
         El comando `make defconfig` es ejecutado.
 
     - Tarea `Build test`:\
-        1.- Se solicita al usuario que introduzca el número de test que se desea compilar.\
+        1.- Se solicita al usuario que seleccione el test que se desea compilar.\
         2.- Se solicita al usuario que introduzca la cantidad de núcleos  a ser utilizados para la compilación de la aplicación seleccionada.\
         3.- El comando `make all` es ejecutado considerando el número de núcleos especificado(opción `-j`).
     
@@ -44,6 +44,9 @@
     - Tarea `Remove auto-generated files`:\
         Todo archivo (`sdkconfig`, `sdkconfig.old`, `main/main.cpp`) y folder (`build`) autogenerado es eliminado.
 
+    - Tarea `Generate test list`:\
+        Todo arcuivo C/C++ al interior de la carpeta `test` es añadido como opción de selección para el uso de la tarea `Build test`.
+
 - Especifica los directorios de inclusión que podrían ser utilizados por el motor de IntelliSense.
 
 - Facilita el proceso de testing con el uso de la tarea `Build test`.
@@ -61,7 +64,7 @@
 1. Ejecutar la tarea `Defconfig`.
 
 2. En este ejemplo, se utilizará el código de fuente `test0000.cpp`.\
-   Ejecutar la tarea `Build test` e introducir el número `0` como el número de test a ser empleado y el número de núcleos que se desea usar para compilar la aplicación.
+   Ejecutar la tarea `Build test`, seleccionar el test `test0000.cpp` para ser compilado e introducir el número de núcleos que se desea usar para compilar la aplicación.
 
 3. Una vez que el test ha sido compilado, ejecutar la tarea `Flash & Monitor` e introducir el nombre del puerto serial a ser usado para descargar la aplicación compilada y monitorizarlo en un terminal.
 

@@ -147,7 +147,7 @@
     "inputs": [
         {
             "type": "pickString",
-            "description": "Test number to be used",
+            "description": "Test to be used",
             "id": "testFile",
 			"options": [
             ]

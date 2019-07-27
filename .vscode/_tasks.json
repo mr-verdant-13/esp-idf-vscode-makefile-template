@@ -1,6 +1,4 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "presentation": {
         "echo": false,
@@ -8,7 +6,7 @@
         "focus": true,
         "panel": "new",
         "showReuseMessage": true,
-        "clear": true,
+        "clear": true
     },
     "tasks": [
         {
@@ -16,16 +14,16 @@
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "sh scripts/Menuconfig.sh",
-            },
+                "command": "sh scripts/Menuconfig.sh"
+            }
         },
         {
             "label": "Defconfig",
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "make defconfig",
-            },
+                "command": "make defconfig"
+            }
         },
         {
             "label": "Generate test list",
@@ -40,20 +38,33 @@
             "windows": {
                 "command": "sh scripts/GenerateTestList.sh"
             },
-            "problemMatcher": [],
-            "runOptions": {
-                "runOn": "folderOpen"
-            }
+            "problemMatcher": []
+        },
+        {
+            "label": "Generate thread list",
+            "presentation": {
+                "reveal": "never",
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "isBackground": true,
+            "type": "shell",
+            "windows": {
+                "command": "sh scripts/GenerateThreadList.sh"
+            },
+            "problemMatcher": []
         },
         {
             "label": "Build test",
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "export testFile=\"${input:testFile}\" && export coresNumber=\"${input:coresNumber}\" && sh scripts/BuildTest.sh",
+                "command": "export testFile=\"${input:testFile}\" && export threadsNumber=\"${input:threadsNumber}\" && sh scripts/BuildTest.sh"
             },
             "dependsOn":[
                 "Generate test list",
+                "Generate thread list"
             ],
             "dependsOrder": "sequence"
         },
@@ -62,49 +73,49 @@
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "make flash ESPPORT=${input:serialPort}",
-            },
+                "command": "make flash ESPPORT=${input:serialPort}"
+            }
         },
         {
             "label": "Monitor",
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "make monitor ESPPORT=${input:serialPort}",
-            },
+                "command": "make monitor ESPPORT=${input:serialPort}"
+            }
         },
         {
             "label": "Flash & Monitor",
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "make flash monitor ESPPORT=${input:serialPort}",
-            },
+                "command": "make flash monitor ESPPORT=${input:serialPort}"
+            }
         },
         {
             "label": "Clean",
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "make clean",
-            },
+                "command": "make clean"
+            }
         },
         {
             "label": "Create new component",
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "export componentName=${input:componentName} && sh scripts/CreateNewComponent.sh",
-            },
+                "command": "export componentName=${input:componentName} && sh scripts/CreateNewComponent.sh"
+            }
         },
         {
             "label": "Remove auto-generated files",
             "type": "shell",
             "problemMatcher": [],
             "windows": {
-                "command": "sh scripts/RemoveAutogen.sh",
-            },
-        },
+                "command": "sh scripts/RemoveAutogen.sh"
+            }
+        }
     ],
     "inputs": [
         {
@@ -112,13 +123,14 @@
             "description": "Test number to be used",
             "id": "testFile",
 			"options": [
-				"test0000.cpp"
             ]
         },
         {
-            "id": "coresNumber",
-            "type": "promptString",
-            "description": "Number of cores to be used"
+            "type": "pickString",
+            "description": "Number of threads to be used",
+            "id": "threadsNumber",
+			"options": [
+            ]
         },
         {
             "id": "serialPort",
@@ -129,6 +141,6 @@
             "id": "componentName",
             "type": "promptString",
             "description": "New component name"
-        },
+        }
     ]
 }

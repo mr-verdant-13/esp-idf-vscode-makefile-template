@@ -1,0 +1,1 @@
+copy ".vscode\_tasks.json" ".vscode\tasks.json"

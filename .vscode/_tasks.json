@@ -69,12 +69,31 @@
             "dependsOrder": "sequence"
         },
         {
+            "label": "Generate COM list",
+            "presentation": {
+                "reveal": "never",
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "isBackground": true,
+            "type": "shell",
+            "windows": {
+                "command": "sh scripts/GenerateComList.sh"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Flash",
             "type": "shell",
             "problemMatcher": [],
             "windows": {
                 "command": "make flash ESPPORT=${input:serialPort}"
-            }
+            },
+            "dependsOn":[
+                "Generate COM list"
+            ],
+            "dependsOrder": "sequence"
         },
         {
             "label": "Monitor",
@@ -82,7 +101,11 @@
             "problemMatcher": [],
             "windows": {
                 "command": "make monitor ESPPORT=${input:serialPort}"
-            }
+            },
+            "dependsOn":[
+                "Generate COM list"
+            ],
+            "dependsOrder": "sequence"
         },
         {
             "label": "Flash & Monitor",
@@ -90,7 +113,11 @@
             "problemMatcher": [],
             "windows": {
                 "command": "make flash monitor ESPPORT=${input:serialPort}"
-            }
+            },
+            "dependsOn":[
+                "Generate COM list"
+            ],
+            "dependsOrder": "sequence"
         },
         {
             "label": "Clean",
@@ -133,9 +160,11 @@
             ]
         },
         {
+            "type": "pickString",
+            "description": "Serial port name to be used",
             "id": "serialPort",
-            "type": "promptString",
-            "description": "Serial port name to be used"
+			"options": [
+            ]
         },
         {
             "id": "componentName",

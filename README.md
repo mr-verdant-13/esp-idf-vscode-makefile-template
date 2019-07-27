@@ -1,4 +1,7 @@
 <!-- TODO -->
+<!-- TODO DOCUMENT THREAD SELECTION -->
+<!-- TODO DOCUMENT COM PORT SELECTION -->
+<!-- TODO DOCUMENT THE USE OF THE CONFIGURATION BAT FILE -->
 
 # **ESP-IDF project template for VSCode (Makefile)**
 

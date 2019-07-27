@@ -1,4 +1,7 @@
 <!-- TODO -->
+<!-- TODO DOCUMENTAR SELECCIÓN DE HILOS -->
+<!-- TODO DOCUMENTAR SELECCIÓN DE PUERTO COM -->
+<!-- TODO DOCUMENTAR USO DEL ARCHIVO BAT DE CONFIGURACIÓN -->
 
 # **Plantilla de proyecto ESP-IDF para VSCode (Makefile)**
 

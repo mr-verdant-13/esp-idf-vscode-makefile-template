@@ -1,3 +1,6 @@
+<!-- TODO -->
+<!-- TODO DOCUMENTAR SELECCIÓN DE HILOS -->
+
 # **Plantilla de proyecto ESP-IDF para VSCode (Makefile)**
 
 [English version](https://github.com/mr-verdant-13/esp-idf-vscode-makefile-template/blob/v1.0.0/README.md)

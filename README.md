@@ -45,7 +45,7 @@
         All auto-generated files (`sdkconfig`, `sdkconfig.old`, `main/main.cpp`) and directories (`build`) are removed.
 
     - `Generate test list` task:\
-        All C/C++ files inside the `test` directory are added as input options for the `Build test` to use.
+        All C/C++ files inside the `test` directory are added as input options for the `Build test` task to use.
 
 - Specifies the include directories that might be used by the IntelliSense engine.
 
@@ -64,7 +64,7 @@
 1. Execute the `Defconfig` task.
 
 2. In this example, the `test0000.cpp` source code will be used.\
-   Execute the `Build test` task, choose the `test0000.cpp` to be compiled and the number of cores you would like to use for building.
+   Execute the `Build test` task, choose the `test0000.cpp` test to be compiled and introduce the number of cores you would like to use for building.
 
 3. Once the test has been built, execute the `Flash & Monitor` task and introduce the serial port name to be used for flashing and monitoring.
 

@@ -2,3 +2,5 @@ BROWSE.VC.DB
 BROWSE.VC.DB-shm
 BROWSE.VC.DB-wal
 tasks.json
+settings.json
+c_cpp_properties.json

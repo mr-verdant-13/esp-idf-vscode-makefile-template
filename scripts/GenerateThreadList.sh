@@ -10,7 +10,7 @@ while [ $threadNumber -gt 0 ]; do
     threadNumber=`expr $threadNumber - 1`
 done
 
-sed -i '$ s/.$//' $tempFile
+sed -i '$s/\,//' $tempFile
 
 echo "$(sed -e '1,/"threadsNumber"/d' "$PWD/.vscode/tasks.json" | sed -n -e '/]/,$p')" >> $tempFile
 

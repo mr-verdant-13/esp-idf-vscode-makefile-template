@@ -11,7 +11,7 @@ for comLine in $line ; do
     fi
 done
 
-sed -i '$ s/.$//' $tempFile
+sed -i '$s/\,//' $tempFile
 
 echo "$(sed -e '1,/"serialPort"/d' "$PWD/.vscode/tasks.json" | sed -n -e '/]/,$p')" >> $tempFile
 

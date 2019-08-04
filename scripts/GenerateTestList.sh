@@ -11,7 +11,7 @@ for testPath in $PWD/main/test/* ; do
   fi
 done
 
-sed -i '$ s/.$//' $tempFile
+sed -i '$s/\,//' $tempFile
 
 echo "$(sed -e '1,/"testFile"/d' "$PWD/.vscode/tasks.json" | sed -n -e '/]/,$p')" >> $tempFile
 
